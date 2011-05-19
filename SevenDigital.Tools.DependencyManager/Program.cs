@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using DependencyManager;
@@ -11,8 +12,14 @@ namespace SevenDigital.Tools.DependencyManager
 	{
 		static void Main(string[] args)
 		{
-            var outputPath = @"path\to\output\folder\or\lib";
-			var assembly = new WrappedAssembly(Assembly.LoadFrom(outputPath + "startingassembly"));
+			if (args.Length < 2)
+			{
+				Console.WriteLine("usage: SevenDigital.Tools.DependencyManager.exe pathContainingAssemblies startingassembly.dll");
+				return;
+			}
+
+            var outputPath = args[0];
+			var assembly = new WrappedAssembly(Assembly.LoadFrom(Path.Combine(outputPath, args[1])));
 
 			var finder = new DependencyFinder(new AssemblyLoader());
 			var dependencies = finder.AnalyseAssembly(assembly, outputPath);

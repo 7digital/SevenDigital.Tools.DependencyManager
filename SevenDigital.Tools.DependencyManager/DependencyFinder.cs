@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using SevenDigital.Tools.DependencyManager;
 using SevenDigital.Tools.DependencyManager.Interfaces;
+using System.IO;
 
 namespace DependencyManager
 {
@@ -23,7 +24,7 @@ namespace DependencyManager
 
                 foreach (AssemblyName referencedName in currentAssembly.GetReferencedAssemblies())
                 {
-                    var assemblyInLib = _assemblyLoader.LoadAssembly(outputPath + referencedName.Name + ".dll");
+                    var assemblyInLib = _assemblyLoader.LoadAssembly(Path.Combine(outputPath,referencedName.Name + ".dll"));
                     if (assemblyInLib != null)
                     {
                         AssemblyName assemblyInLibName = assemblyInLib.GetName();

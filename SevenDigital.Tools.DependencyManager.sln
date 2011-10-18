@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevenDigital.Tools.DependencyManager", "SevenDigital.Tools.DependencyManager\SevenDigital.Tools.DependencyManager.csproj", "{403E2C8B-EA09-4A0D-BEA2-553EFF4924A8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevenDigital.Tools.DependencyManager.Unit.Tests", "SevenDigital.Tools.DependencyManager.Unit.Tests\SevenDigital.Tools.DependencyManager.Unit.Tests.csproj", "{C1C56C24-BEA1-46A1-BBEF-1B1F3AE0C70F}"

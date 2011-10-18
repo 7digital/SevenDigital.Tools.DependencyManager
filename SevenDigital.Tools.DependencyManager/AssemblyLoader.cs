@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Reflection;
 using SevenDigital.Tools.DependencyManager.Interfaces;
@@ -17,6 +18,10 @@ namespace SevenDigital.Tools.DependencyManager
             {
                 return null;
             }
-        }
+			catch (BadImageFormatException)
+			{
+				return null;
+			}
+		}
 	}
 }
